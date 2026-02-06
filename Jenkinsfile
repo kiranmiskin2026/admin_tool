@@ -12,7 +12,7 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                sh '''
+                bat '''
                 echo "Checking Node and npm versions"
                 node -v
                 npm -v
@@ -28,7 +28,7 @@ pipeline {
 
         stage('Run Playwright Tests') {
             steps {
-                sh '''
+                bat '''
                 echo "Running Playwright tests"
                 npx playwright test
                 '''
@@ -37,7 +37,7 @@ pipeline {
 
         stage('Deploy with PM2') {
             steps {
-                sh '''
+                bat '''
                 echo "Stopping old PM2 process if exists"
                 pm2 delete admin_tool || true
 
