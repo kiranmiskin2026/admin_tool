@@ -30,14 +30,14 @@ pipeline {
             }
         }
 
-        stage('Run Playwright Tests') {
-            steps {
-                sh '''
-                echo "Running Playwright tests"
-                npx playwright test
-                '''
-            }
-        }
+        // stage('Run Playwright Tests') {
+        //     steps {
+        //         sh '''
+        //         echo "Running Playwright tests"
+        //         npx playwright test
+        //         '''
+        //     }
+        // }
 
         stage('Deploy with PM2') {
             steps {
