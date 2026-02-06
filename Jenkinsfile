@@ -25,7 +25,7 @@ pipeline {
                 npm install
 
                 echo "Installing Playwright dependencies"
-                npx playwright install --with-deps
+                npx playwright install
                 '''
             }
         }
