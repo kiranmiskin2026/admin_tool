@@ -1,15 +1,11 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'node18'
-    }
-
     stages {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main',
+                git branch: 'staging',
                     url: 'https://github.com/kiranmiskin2026/admin_tool.git'
             }
         }
