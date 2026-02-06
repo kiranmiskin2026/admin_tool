@@ -43,16 +43,16 @@ pipeline {
             steps {
                 sh '''
                 echo "Stopping old PM2 process if exists"
-                pm2 delete admin_tool || true
+                npx pm2 delete admin_tool || true
 
                 echo "Starting app using PM2 ecosystem"
-                pm2 start ecosystem.config.js
+                npx pm2 start ecosystem.config.js
 
                 echo "Saving PM2 process list"
-                pm2 save
+                npx pm2 save
 
                 echo "Current PM2 status"
-                pm2 list
+                npx pm2 list
                 '''
             }
         }
